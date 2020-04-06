@@ -4,11 +4,13 @@ Hr system for apax
 Instructions for Dev server
 
 git clone repo
+configure secrets files for aws credentials
 
-chmod +x devrun.sh (local server no services)
-./devrun.sh
+to run locally with a postgres container:
+python3 rt.py dev_postgres
 
-chmod +x prodservices.sh (nginx on port 80)
-./prodservices.sh
+to run locally entirely on containers:
+python3 rt.py dev_on_docker
 
-visit localhost:8000
+to run production with RDS database
+python3 rt.py prod_demo
