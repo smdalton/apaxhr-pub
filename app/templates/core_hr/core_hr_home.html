@@ -1,0 +1,81 @@
+{% extends "apaxhr/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container ">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="mt-5 display-3">Employee Portal</h1>
+                <div class="col-lg-12 text-center">
+                    Welcome {{ request.user.first_name }} {{ request.user.last_name }} </div>
+            </div>
+        </div>
+        <hr>
+{#        <div class="row">#}
+{#            <h3 class="mx-auto ">Action Items</h3>#}
+{#        </div>#}
+
+
+
+        <div class="row">
+            <div class="card col-md-3">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img class="card-img-top pt-2 rounded img-fluid embed-responsive-item"
+                         src="{% static 'images/happy_document.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title ">Documents</h5>
+                    <p class="card-text">Keep your docs up to date and keep this icon happy :)</p>
+                    <a href="{% url 'core_hr:document_center' %}" class="btn btn-primary">Edit Documents</a>
+                </div>
+            </div>
+            <div class="card col-md-3">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img class="card-img-top img-fluid embed-responsive-item"
+                         src="{% static 'images/survey_picture.png' %}" alt="Card image cap"></div>
+                <div class="card-body ">
+                    <h5 class="card-title">Survey Center</h5>
+                    <p class="card-text">Access new surveys and view published results.</p>
+                    <a href="#" class="btn btn-primary">Access Surveys</a>
+                </div>
+            </div>
+
+            <div class="card col-md-3 mx-auto">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img class="card-img-top  embed-responsive-item"
+                         src="{% static 'images/placement.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Current Placement</h5>
+                    <p class="card-text">Information regarding pay and your current position</p>
+
+                    <a href="{% url 'core_hr:document_center' %}" class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+
+
+            <div class="card col-md-3 mx-auto">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img class="card-img-top rounded pt-3 embed-responsive-item"
+                         src="{% static 'images/placement_history.png' %}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Placement history</h5>
+                    <p class="card-text">A list of all of your previous placement locations</p>
+
+                    <a href="{% url 'core_hr:document_center' %}" class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    {#                  -----------Action Center--------                  #}
+
+{% endblock %}

@@ -1,0 +1,647 @@
+ALTER TABLE public.users_employeeprofile_id_seq OWNER TO "postgres-dev";
+
+--
+-- Name: users_employeeprofile_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres-dev
+--
+
+ALTER SEQUENCE public.users_employeeprofile_id_seq OWNED BY public.users_employeeprofile.id;
+
+
+--
+-- Name: admin_interface_theme id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.admin_interface_theme ALTER COLUMN id SET DEFAULT nextval('public.admin_interface_theme_id_seq'::regclass);
+
+
+--
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
+
+
+--
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_achievementcertificate id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_achievementcertificate ALTER COLUMN id SET DEFAULT nextval('public.core_hr_achievementcertificate_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_degreedocument id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_degreedocument ALTER COLUMN id SET DEFAULT nextval('public.core_hr_degreedocument_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_passport id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_passport ALTER COLUMN id SET DEFAULT nextval('public.core_hr_passport_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_registryofstay id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_registryofstay ALTER COLUMN id SET DEFAULT nextval('public.core_hr_registryofstay_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_resume id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_resume ALTER COLUMN id SET DEFAULT nextval('public.core_hr_resume_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_teachingcertificate id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_teachingcertificate ALTER COLUMN id SET DEFAULT nextval('public.core_hr_teachingcertificate_id_seq'::regclass);
+
+
+--
+-- Name: core_hr_workpermit id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_workpermit ALTER COLUMN id SET DEFAULT nextval('public.core_hr_workpermit_id_seq'::regclass);
+
+
+--
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
+
+
+--
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
+
+
+--
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
+
+
+--
+-- Name: users_employee id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee ALTER COLUMN id SET DEFAULT nextval('public.users_employee_id_seq'::regclass);
+
+
+--
+-- Name: users_employee_groups id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_groups ALTER COLUMN id SET DEFAULT nextval('public.users_employee_groups_id_seq'::regclass);
+
+
+--
+-- Name: users_employee_user_permissions id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.users_employee_user_permissions_id_seq'::regclass);
+
+
+--
+-- Name: users_employeeprofile id; Type: DEFAULT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employeeprofile ALTER COLUMN id SET DEFAULT nextval('public.users_employeeprofile_id_seq'::regclass);
+
+
+--
+-- Name: admin_interface_theme admin_interface_theme_name_30bda70f_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.admin_interface_theme
+    ADD CONSTRAINT admin_interface_theme_name_30bda70f_uniq UNIQUE (name);
+
+
+--
+-- Name: admin_interface_theme admin_interface_theme_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.admin_interface_theme
+    ADD CONSTRAINT admin_interface_theme_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group
+    ADD CONSTRAINT auth_group_name_key UNIQUE (name);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_permission_id_0cd325b0_uniq UNIQUE (group_id, permission_id);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_codename_01ab375a_uniq UNIQUE (content_type_id, codename);
+
+
+--
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_achievementcertificate core_hr_achievementcertificate_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_achievementcertificate
+    ADD CONSTRAINT core_hr_achievementcertificate_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_degreedocument core_hr_degreedocument_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_degreedocument
+    ADD CONSTRAINT core_hr_degreedocument_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_degreedocument core_hr_degreedocument_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_degreedocument
+    ADD CONSTRAINT core_hr_degreedocument_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_passport core_hr_passport_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_passport
+    ADD CONSTRAINT core_hr_passport_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_passport core_hr_passport_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_passport
+    ADD CONSTRAINT core_hr_passport_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_registryofstay core_hr_registryofstay_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_registryofstay
+    ADD CONSTRAINT core_hr_registryofstay_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_registryofstay core_hr_registryofstay_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_registryofstay
+    ADD CONSTRAINT core_hr_registryofstay_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_resume core_hr_resume_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_resume
+    ADD CONSTRAINT core_hr_resume_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_resume core_hr_resume_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_resume
+    ADD CONSTRAINT core_hr_resume_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_teachingcertificate core_hr_teachingcertificate_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_teachingcertificate
+    ADD CONSTRAINT core_hr_teachingcertificate_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_teachingcertificate core_hr_teachingcertificate_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_teachingcertificate
+    ADD CONSTRAINT core_hr_teachingcertificate_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: core_hr_workpermit core_hr_workpermit_owner_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_workpermit
+    ADD CONSTRAINT core_hr_workpermit_owner_id_key UNIQUE (owner_id);
+
+
+--
+-- Name: core_hr_workpermit core_hr_workpermit_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_workpermit
+    ADD CONSTRAINT core_hr_workpermit_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_content_type
+    ADD CONSTRAINT django_content_type_app_label_model_76bd3d3b_uniq UNIQUE (app_label, model);
+
+
+--
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_migrations
+    ADD CONSTRAINT django_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- Name: users_employee users_employee_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee
+    ADD CONSTRAINT users_employee_email_key UNIQUE (email);
+
+
+--
+-- Name: users_employee_groups users_employee_groups_employee_id_group_id_6931f772_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_groups
+    ADD CONSTRAINT users_employee_groups_employee_id_group_id_6931f772_uniq UNIQUE (employee_id, group_id);
+
+
+--
+-- Name: users_employee_groups users_employee_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_groups
+    ADD CONSTRAINT users_employee_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_employee users_employee_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee
+    ADD CONSTRAINT users_employee_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_employee_user_permissions users_employee_user_perm_employee_id_permission_i_f9447178_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_user_permissions
+    ADD CONSTRAINT users_employee_user_perm_employee_id_permission_i_f9447178_uniq UNIQUE (employee_id, permission_id);
+
+
+--
+-- Name: users_employee_user_permissions users_employee_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_user_permissions
+    ADD CONSTRAINT users_employee_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_employeeprofile users_employeeprofile_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employeeprofile
+    ADD CONSTRAINT users_employeeprofile_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: admin_interface_theme_name_30bda70f_like; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX admin_interface_theme_name_30bda70f_like ON public.admin_interface_theme USING btree (name varchar_pattern_ops);
+
+
+--
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
+
+
+--
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
+
+
+--
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
+
+
+--
+-- Name: core_hr_achievementcertificate_owner_id_4a046777; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX core_hr_achievementcertificate_owner_id_4a046777 ON public.core_hr_achievementcertificate USING btree (owner_id);
+
+
+--
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
+
+
+--
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
+
+
+--
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
+
+
+--
+-- Name: users_employee_email_9d0608b5_like; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employee_email_9d0608b5_like ON public.users_employee USING btree (email varchar_pattern_ops);
+
+
+--
+-- Name: users_employee_groups_employee_id_968fa0a0; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employee_groups_employee_id_968fa0a0 ON public.users_employee_groups USING btree (employee_id);
+
+
+--
+-- Name: users_employee_groups_group_id_83a49623; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employee_groups_group_id_83a49623 ON public.users_employee_groups USING btree (group_id);
+
+
+--
+-- Name: users_employee_user_permissions_employee_id_0590f38d; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employee_user_permissions_employee_id_0590f38d ON public.users_employee_user_permissions USING btree (employee_id);
+
+
+--
+-- Name: users_employee_user_permissions_permission_id_3ae371ef; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employee_user_permissions_permission_id_3ae371ef ON public.users_employee_user_permissions USING btree (permission_id);
+
+
+--
+-- Name: users_employeeprofile_owner_id_fa05120e; Type: INDEX; Schema: public; Owner: postgres-dev
+--
+
+CREATE INDEX users_employeeprofile_owner_id_fa05120e ON public.users_employeeprofile USING btree (owner_id);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissio_permission_id_84c5c92e_fk_auth_perm FOREIGN KEY (permission_id) REFERENCES public.auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_b120cbf9_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES public.auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_2f476e4b_fk_django_co FOREIGN KEY (content_type_id) REFERENCES public.django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_achievementcertificate core_hr_achievementcertificate_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_achievementcertificate
+    ADD CONSTRAINT core_hr_achievementcertificate_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_degreedocument core_hr_degreedocument_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_degreedocument
+    ADD CONSTRAINT core_hr_degreedocument_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_passport core_hr_passport_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_passport
+    ADD CONSTRAINT core_hr_passport_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_registryofstay core_hr_registryofstay_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_registryofstay
+    ADD CONSTRAINT core_hr_registryofstay_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_resume core_hr_resume_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_resume
+    ADD CONSTRAINT core_hr_resume_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_teachingcertificate core_hr_teachingcertificate_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_teachingcertificate
+    ADD CONSTRAINT core_hr_teachingcertificate_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: core_hr_workpermit core_hr_workpermit_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.core_hr_workpermit
+    ADD CONSTRAINT core_hr_workpermit_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_content_type_id_c4bce8eb_fk_django_co FOREIGN KEY (content_type_id) REFERENCES public.django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_users_employee_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_user_id_c564eba6_fk_users_employee_id FOREIGN KEY (user_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: users_employee_groups users_employee_groups_employee_id_968fa0a0_fk_users_employee_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_groups
+    ADD CONSTRAINT users_employee_groups_employee_id_968fa0a0_fk_users_employee_id FOREIGN KEY (employee_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: users_employee_groups users_employee_groups_group_id_83a49623_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_groups
+    ADD CONSTRAINT users_employee_groups_group_id_83a49623_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES public.auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: users_employee_user_permissions users_employee_user__employee_id_0590f38d_fk_users_emp; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_user_permissions
+    ADD CONSTRAINT users_employee_user__employee_id_0590f38d_fk_users_emp FOREIGN KEY (employee_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: users_employee_user_permissions users_employee_user__permission_id_3ae371ef_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employee_user_permissions
+    ADD CONSTRAINT users_employee_user__permission_id_3ae371ef_fk_auth_perm FOREIGN KEY (permission_id) REFERENCES public.auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: users_employeeprofile users_employeeprofile_owner_id_fa05120e_fk_users_employee_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres-dev
+--
+
+ALTER TABLE ONLY public.users_employeeprofile
+    ADD CONSTRAINT users_employeeprofile_owner_id_fa05120e_fk_users_employee_id FOREIGN KEY (owner_id) REFERENCES public.users_employee(id) DEFERRABLE INITIALLY DEFERRED;
+
+

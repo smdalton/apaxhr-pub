@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  web:
+    container_name: prod_app
+    build: app
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./app:/code
+    env_file:
+      - .env.prod
+    ports:
+      - "80:8000"
+    command: python3 start_server.py prod

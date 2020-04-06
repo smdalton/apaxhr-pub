@@ -1,0 +1,61 @@
+{% extends "core_hr/document_templates/view_document.html" %}
+{% block document_detail_view %}
+{% load countries %}
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            {% if passport.expired %}
+                <h2 class="bg-danger my-5 py-4 rounded text-center text-white text-capitalize">Passport Status:
+                    Expired</h2>
+            {% elif not passport.expired %}
+                <h2 class="bg-success my-5 py-4 rounded text-white text-capitalize text-center">Passport Status:
+                    Valid</h2>
+            {% else %}
+                <h4>Document Error</h4>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card rounded col-md-6 mx-auto">
+            <a href="{{ passport.get_photo_url }}" class="img-card-top my-1">
+                <img src="{{ passport.get_photo_url }}" class="img-thumbnail img-card-top" alt="">
+            </a>
+            <div class="card-body">
+                <table class="table table-dark rounded pt-1 my-3">
+                    <tbody>
+                    <tr>
+                        <td>Employee Name as on Passport</td>
+                        <td>{{ passport.owners_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Country of Issue</td>
+                        </td>
+                        <td><img src="{{ passport.place_of_issue.flag }}"> {{ passport.place_of_issue.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Passport Number</td>
+                        <td>{{ passport.passport_number }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td> {{ passport.dob }}</td>
+                    </tr>
+                    <tr>
+                        <td>Passport Expiration Date:</td>
+                        <td> {{ passport.expiration_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>Passport Issue Date</td>
+                        <td>{{ passport.issue_date }}</td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

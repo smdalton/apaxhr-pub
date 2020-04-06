@@ -1,0 +1,31 @@
+{% extends "apaxhr/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container">
+        <h1>Document Update Form</h1>
+
+
+        <form method="post" class="col-lg-auto mx-auto " enctype=multipart/form-data>
+        {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field.label_tag }} {{ field }}
+                    {% if field.help_text %}
+                        <p class="help">
+                            {{ field.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <p>{{ error }} on {{ field }}</p>
+        {% endfor %}{% endfor %}
+        </form>
+    </div>
+
+{% endblock %}
+

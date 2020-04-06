@@ -1,0 +1,23 @@
+{% extends "core_hr/document_templates/view_document.html" %}
+{% block document_detail_view %}
+
+<div class="row">
+        <div class="card rounded col-md-6 mx-auto">
+            <a href="{{ teaching_certificate.get_photo_url }}" class="img-card-top my-1">
+                <img src="{{ passport.get_file_url }}" class="img-thumbnail img-card-top" alt="">
+            </a>
+            <div class="card-body">
+                <table class="table table-dark rounded pt-1 my-3">
+                    <tbody>
+
+                    <tr>
+                        <td>Type of teaching Certificate</td>
+                        <td>{{ teaching_certificate.get_type_display }}</td>
+                    </tr>
+                    <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

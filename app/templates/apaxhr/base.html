@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>APAX HRS</title>
+    {% block header_block %}
+    {% endblock %}
+</head>
+<body class="bg-rose">
+
+{% block title_block %}
+
+{% endblock %}
+
+<!-- Navigation -->
+{% block nav_block %}
+    {% include "header_footer/nav.html" %}
+{% endblock %}
+
+<!-- Page Content -->
+{% block content %}
+
+{% endblock %}
+<!-- Bootstrap core JavaScript -->
+
+
+</body>
+
+{% block footer_block %}
+    {% include 'header_footer/footer.html' %}
+{% endblock %}
+
+</html>

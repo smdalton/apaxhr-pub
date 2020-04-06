@@ -1,0 +1,16 @@
+{% extends "apaxhr/base.html" %}
+{% include 'core_hr/document_templates/view_ros.html' %}
+{% include 'core_hr/document_templates/view_passport.html' %}
+{% include 'core_hr/document_templates/view_work_permit.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="text-center my-4">Document Management</h1>
+        <br>
+        {% block document_detail_view %}
+
+        {% endblock %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,352 @@
+{% extends "apaxhr/base.html" %}
+
+
+{% block content %}
+    <script type="text/javascript">
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>
+    {% if request.user.is_authenticated %}
+        <div class="container">
+            <div class="row ">
+                <a href="#" class="col-sm-auto mx-auto my-5 btn btn-info" onclick="toggle_visibility('modules');">Click
+                    Here
+                    to show modules</a>
+            </div>
+        </div>
+
+        {#    {{ if request.user }}#}
+        {#    {% if request.user %}#}
+        {#        {%for field in request.user %}#}
+        {#        {{ field }}#}
+        {#        {% endfor %}#}
+        {#    {% endif %}#}
+
+
+{#        <div class="row ">#}
+{#            <a href="{% url 'home' access_tier=0 %}" class="btn btn-warning mx-auto">Tier0 User View</a>#}
+{#            <a href="{% url 'home' access_tier=1 %}" class="btn btn-warning mx-auto">Tier1 User View</a>#}
+{#            <a href="{% url 'home' access_tier=2 %} " class="btn btn-warning mx-auto">Tier2 User View</a>#}
+{#            <a href="{% url 'home' access_tier=3 %} " class="btn btn-warning mx-auto">Tier3 User View</a>#}
+{#            <a href="{% url 'home' access_tier=4 %} " class="btn btn-warning mx-auto">Tier4 User View</a>#}
+{#        </div>#}
+
+        <div class="row">
+        <p class="lead mx-auto">
+            <a class="btn btn-success btn-lg" href="{% url 'admin:index' %}">Access Admin Modules</a></p>
+        </div>
+
+        <div id="modules" class="container" style="display: none">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="mt-5">APAX HR Tools</h1>
+
+                    {#test#}
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Modules</h3>
+                </div>
+            </div>
+            <hr>
+            <h2>Release 1</h2>
+            <div class="row">
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Core HR</h5>
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>Employees</li>
+                                <li>Resumes/CVs</li>
+                                <li>FAS/KPI Certificates</li>
+                                <li>ROS Forms</li>
+                                <li>Work Permits</li>
+                                <li>Degrees</li>
+                                <li>TEFL/Teaching Certificates</li>
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Access Core HR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h2>Release 2</h2>
+            <div class="row">
+
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Automated Notifications</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Email Notifications
+                                </li>
+                                <li>
+                                    Document expiration notices
+                                </li>
+
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <h2>Release 3</h2>
+            <div class="row">
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Employee Self Service</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Salary Information
+                                </li>
+                                <li>
+                                    Stipends
+                                </li>
+                                <li>
+                                    Bonuses
+                                </li>
+                                <li>
+                                    Contracts
+                                </li>
+
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Benefits Administration</h5>
+                            <p class="card-text">
+
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Health Care Benefit information
+                                </li>
+                                <li>
+                                    ROS forms
+                                </li>
+                                <li>
+                                    Passports
+                                </li>
+                                <li>
+                                    Contact Info
+                                </li>
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <hr>
+            <h2>Release 4</h2>
+            <div class="row">
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Employee Performance Review</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Salary Information
+                                </li>
+                                <li>
+                                    Stipends
+                                </li>
+                                <li>
+                                    Bonuses
+                                </li>
+                                <li>
+                                    Contracts
+                                </li>
+
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Applicant Tracking</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Health Care Benefit information
+                                </li>
+                                <li>
+                                    ROS forms
+                                </li>
+                                <li>
+                                    Passports
+                                </li>
+                                <li>
+                                    Contact Info
+                                </li>
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <hr>
+            <h2>Release 5</h2>
+            <div class="row">
+
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Payroll</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Salary Information
+                                </li>
+                                <li>
+                                    Stipends
+                                </li>
+                                <li>
+                                    Bonuses
+                                </li>
+                                <li>
+                                    Contracts
+                                </li>
+
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mx-auto">
+                    <div class="card">
+                        <img src="https://apaxhr-test.s3-ap-southeast-1.amazonaws.com/demo-images/Unknown-1.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Benefits Administration</h5>
+                            <p class="card-text">
+                            <p class="card-text">
+                                Access and manage:
+                            <ul>
+                                <li>
+                                    Health Care Benefit information
+                                </li>
+                                <li>
+                                    ROS forms
+                                </li>
+                                <li>
+                                    Passports
+                                </li>
+                                <li>
+                                    Contact Info
+                                </li>
+                            </ul>
+                            </p>
+                            <a href="#" class="btn btn-primary">Go</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div id="landing-container" class="container rounded"
+             style=" background-size: cover; height:100%; width: 100%; background-position: center;  background-repeat: no-repeat; background-image: url('https://images.unsplash.com/photo-1521087926340-f428c113026c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=964&q=80')">
+        </div>
+
+    {% else %}
+        {% load crispy_forms_tags %}
+
+
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center display-1 col-md-6 my-4 mx-auto"> Login</h1>
+
+            </div>
+
+            <div class="row">
+                <div class="card mx-auto ">
+                    <div class="card-body">
+                        <form method="post" class="col-lg-auto ">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card mx-auto my-4 ">
+                    <div class="card-body my-1">
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    {% endif %}
+{% endblock %}

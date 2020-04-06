@@ -1,0 +1,27 @@
+{% extends 'core_hr/document_templates/view_document.html' %}
+{{ degree }}
+{% block document_detail_view %}
+
+<div class="row">
+        <div class="card rounded col-md-6 mx-auto">
+            <a href="{{ passport.get_photo_url }}" class="img-card-top my-1">
+                <img src="{{ passport.get_photo_url }}" class="img-thumbnail img-card-top" alt="">
+            </a>
+            <div class="card-body">
+                <table class="table table-dark rounded pt-1 my-3">
+                    <tbody>
+                    <tr>
+                        <td>Employee Name as on Passport</td>
+                        <td>{{ passport.owners_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Country of Issue</td>
+                        </td>
+                        <td><img src="{{ passport.place_of_issue.flag }}"> {{ passport.place_of_issue.name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+{% endblock %}

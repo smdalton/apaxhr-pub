@@ -1,0 +1,17 @@
+"""
+To run the program:
+
+python3 run_tools.py with keys of dict for options
+function_dict ={
+    'dev': dev_no_services,
+    'dev_on_docker': dev_on_docker,
+    'dev_nginx': dev_nginx,
+    'dev_redis': dev_redis,
+    'dev_redis_nginx': dev_redis_nginx,
+    'prod_redis_nginx': prod_redis_nginx,
+    'prod_no_services': prod
+}
+
+To test the program:
+pytest
+"""

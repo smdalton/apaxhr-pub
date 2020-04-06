@@ -1,0 +1,41 @@
+{% extends "core_hr/document_templates/view_document.html" %}
+{% block document_detail_view %}
+        <div class="row">
+        <div class="col-md-4 mx-auto">
+            {% if work_permit.expired %}
+                <h2 class="bg-danger my-5 py-4 rounded text-center text-white text-capitalize">Work Permit Status:
+                    Expired</h2>
+            {% elif not work_permit.expired %}
+                <h2 class="bg-success my-5 py-4 rounded text-white text-capitalize text-center">Work Permit Status:
+                    Valid</h2>
+            {% else %}
+                <h4>Document Error</h4>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="card rounded col-md-6 mx-auto">
+            <a href="{{ work_permit.get_photo_url }}" class="img-card-top my-1">
+                <img src="{{ work_permit.get_photo_url }}" class="img-thumbnail img-card-top" alt="">
+            </a>
+            <div class="card-body">
+                <table class="table table-dark rounded pt-1 my-3">
+                    <tbody>
+                    <tr>
+                        <td>Document Type</td>
+                        <td>{{ work_permit.get_type_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Work Permit Expiration Date:</td>
+                        <td> {{ work_permit.expiration_date }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

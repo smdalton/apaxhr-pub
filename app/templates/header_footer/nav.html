@@ -1,0 +1,54 @@
+{% load static %}
+<nav class="navbar navbar-light navbar-expand-lg bg-danger sticky-top ">
+    <div class="container">
+        <a class="navbar-brand text-white" href="{% url 'home_simple' %}"><h4>APAX HR</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+
+        <div class="collapse navbar-collapse container" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+
+
+                {% if request.session.tier1  or request.session.tier2 or request.session.tier3 or request.session.tier4 %}
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white" href="{% url 'core_hr:self_service' %}">Employee Portal</a>
+                    </li>
+                {% endif %}
+
+                {% if request.session.tier2 or request.session.tier3 or request.session.tier4 %}
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white" href="#">Center Tools</a>
+                    </li>
+                {% endif %}
+
+                {% if request.session.tier2 or request.session.tier3 or request.session.tier4 %}
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white" href="#">Teacher Management</a>
+                    </li>
+                {% endif %}
+
+                {% if request.session.tier3 or request.session.tier4 %}
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white" href="#">HR Tools</a>
+                    </li>
+                {% endif %}
+                {% if request.session.tier3 or request.session.tier4 %}
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white" href="#">Payroll</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link btn text-white" href="{% url 'users:user_login' %}">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn text-white" href="{% url 'users:registration' %}">Signup</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
