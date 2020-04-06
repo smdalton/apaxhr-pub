@@ -3,14 +3,11 @@ Hr system for apax
 
 Instructions for Dev server
 
-git clone repo
-configure secrets files for aws credentials
+1. git clone
+2. cd apaxhr (configure secrets files for aws credentials)
 
-to run locally with a postgres container:
-python3 rt.py dev_postgres
+3. python3 rt.py dev_postgres (to run locally with a postgres container)
 
-to run locally entirely on containers:
-python3 rt.py dev_on_docker
 
-to run production with RDS database
-python3 rt.py prod_demo
+python3 rt.py dev_on_docker (to run full stack redis/rabbit/celery1&2 locally entirely on containers)
+python3 rt.py prod_demo (to run production with RDS database)
