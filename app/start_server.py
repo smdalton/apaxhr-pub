@@ -20,6 +20,7 @@ def celery_beat():
     time.sleep(20)
     os.system('celery -A apaxhr beat --loglevel=info  -S django_celery_beat.schedulers:DatabaseScheduler')
 
+# Insecure but the account is deactivated now so this is left for documentary purposes
 def dev():
     # set env's
     os.environ['NUM_USERS']='25'
