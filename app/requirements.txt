@@ -41,7 +41,7 @@ django-nose==1.4.6
 django-redis==4.11.0
 django-storages==1.8
 django-timezone-field==3.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docker==4.1.0
 docker-compose==1.25.0
 dockerpty==0.4.1
